@@ -1,0 +1,14 @@
+{
+  "TC01" : {
+    "name": "Login failed with an invalid credential",
+    "username": "student",
+    "password": "Password1233",
+    "errorMessage": "Your password is invalid!"
+  },
+  "TC02" : {
+    "name": "Login passed with a valid credential",
+    "username": "student",
+    "password": "Password123",
+    "successMessage": "Logged In Successfully"
+  }
+}

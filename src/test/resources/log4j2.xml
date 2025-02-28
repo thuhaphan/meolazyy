@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <!-- Console Appender -->
+        <!--Log in console screen-->
+
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %highlight{%-level: }{INFO=green, WARN=yellow, ERROR=red}%msg%n"/>
+        </Console>
+        <!-- Rolling Files Appender -->
+        <!--Log in rolling files-->
+        <RollingFile name="fileLogger" filePattern="log/%d{yyyy-MM-dd}-selenium-tutorial.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%-level] %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="fileLogger"/>
+        </Root>
+    </Loggers>
+</Configuration>
